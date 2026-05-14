@@ -25,7 +25,7 @@ The current and most up to date version of Sphinx is called Sphinx tLW. This ver
 
 ---
 
-## 📸 Pictures (These are Out of Date)
+## 📸 Pictures (Outdated Pictures of Gen1 Sphinx)
 
 <img src="Images/IMG_2683.jpeg" alt="Sphinx Toolhead" width="300">
 
