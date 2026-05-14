@@ -3,9 +3,9 @@
 **File repository for the Sphinx toolhead**
 
 Sphinx toolhead is aimed to be a high-performance toolhead with an emphasis on part cooling and rigidity.  
-This project was built around the goal of printing a **quality 4-minute Benchy**.  
+This project was built around the goal of printing a **quality 4-minute PLA Benchy**.  
 
-This toolhead is designed to be used with Monolith Gantry. Normal voron gantry support will be added in the future.
+This toolhead has different configurations for Monolith gantry and Voron gantry.
 
 This project is a **work in progress!**
 
@@ -17,10 +17,9 @@ If you use this toolhead and modify or remix, please upload here or reach out an
 
 ## 🧩 Notes
 
-Load the entire STEP file into Orca.  
-The STEP file has built-in supports, so:
+The current and most up to date version of Sphinx is called Sphinx tLW. This version utilizes a micro bowden approach in order to optimize for COM while not compromising on toolhead rigidity and so far has proved to work very well. 
 
-- **Main toolhead body:** 6 walls, 6 top/bottom layers, 25% infill    
+- **Print Settings:** 8 walls, 8 top/bottom layers, 40% infill
 
 
 
@@ -40,8 +39,6 @@ The STEP file has built-in supports, so:
 |:-----------:|:----------:|
 | <img src="Images/IMG_2721.png" width="300"> | <img src="Images/IMG_2722.png" width="300"> |
 
-*(These graphs were made with the printed toolhead bracket)*
-
 ---
 
 ## ⚙️ Mass Specs / COM
@@ -56,7 +53,8 @@ The STEP file has built-in supports, so:
 - Tricorn
 - Goliath
 - CHC XL
-- Rapido UHF 
+- Rapido UHF
+- Dragon UHF
 
 **Extruders:**  
 - Sherpa Mini  
@@ -70,20 +68,17 @@ The STEP file has built-in supports, so:
 ## 🔧 Hardware in Progress
 
 **Hotends:**    
-- Chube Compact  
-- Dragon ACE UHF  
+- Chube Compact    
 
 **Extruders:**  
-- Orbiter 2.0 
-- Sherpa Micro  
-- Vz-Hextrudort Low Plus  
+- Orbiter 2.0 (maybe)   
   
 
 ---
 
 ## 🌬️ Cooling Capability
 
-The toolhead’s part cooling system is built specifically around the duct geometry to maximize usable airflow and thrust efficiency, with support for either WS9290 or WS7040 blowers. The 9290 duct option is very aggressive and great for speed printing, but the 7040 duct will not disappoint by any means. The goal of the ducts was to be able to print a perfect 5min benchy. Below is some data I collected that I used to optimize the toolhead ducts for both blowers.
+The toolhead is built specifically around the duct geometry to maximize usable airflow for part cooling, with support for either WS9290 or WS7040 blowers. The 9290 blower is the optimal option is very aggressive and great for speed printing, but the 7040 duct will not disappoint. The goal of the ducts was to be able to print a perfect 5min benchy. Below is some data I collected that I used to optimize the toolhead ducts for both blowers.
 
 ## Mass Flow (g/s) vs. Outlet Area
 
