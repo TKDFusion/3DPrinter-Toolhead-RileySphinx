@@ -11,7 +11,7 @@ This project is a **work in progress!**
 
 If you use this toolhead and modify or remix, please upload here or reach out and let me know on Instagram or Discord!  
 📸 Instagram: [@practically_printed](https://instagram.com/practically_printed)  
-💬 Discord: `rileyrandall`
+💬 Discord: https://discord.gg/PdSYQn8kq
 
 ---
 
