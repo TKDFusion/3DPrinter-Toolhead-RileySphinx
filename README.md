@@ -43,8 +43,9 @@ The current and most up to date version of Sphinx is called Sphinx tLW. This ver
 
 ## ⚙️ Mass Specs / COM
 
-*(Add measurements or COM data here)*
+ <img src="Images/IMG_4381.jpeg" width="300">
 
+ 
 ---
 
 ## 🧰 Currently Supported Hardware
