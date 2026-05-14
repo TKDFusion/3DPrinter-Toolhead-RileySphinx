@@ -7,11 +7,11 @@ This project was built around the goal of printing a **quality 4-minute PLA Benc
 
 This toolhead has different configurations for Monolith gantry and Voron gantry.
 
-This project is a **work in progress!**
+This project is a **work in progress!**. If you have any suggested feel free to reach out of discord!
 
 If you use this toolhead and modify or remix, please upload here or reach out and let me know on Instagram or Discord!  
 📸 Instagram: [@practically_printed](https://instagram.com/practically_printed)  
-💬 Discord: https://discord.gg/PdSYQn8kq
+💬 Sphinx Development Channel: https://discord.gg/PdSYQn8kq
 
 ---
 
