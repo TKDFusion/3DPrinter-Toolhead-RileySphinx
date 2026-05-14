@@ -83,31 +83,7 @@ The current and most up to date version of Sphinx is called Sphinx tLW. This ver
 
 The toolhead is built specifically around the duct geometry to maximize usable airflow for part cooling, with support for either WS9290 or WS7040 blowers. The 9290 blower is the optimal option is very aggressive and great for speed printing, but the 7040 duct will not disappoint. The goal of the ducts was to be able to print a perfect 5min benchy. Below is some data I collected that I used to optimize the toolhead ducts for both blowers.
 
-## Mass Flow (g/s) vs. Outlet Area
-
-| Outlet Area | WS9290 | WS7040 |
-|------------|--------|--------|
-| 80         | 3.0    | 1.7    |
-| 100        | 3.6    | 2.0    |
-| 120        | 4.5    | 2.7    |
-| 135        | 4.6    | 2.9    |
-| 150        | 5.2    | 2.8    |
-| 165        | 5.5    | 2.9    |
-| 180        | 5.6    | 3.0    |
-| 210        | 5.9    | 3.0    |
-
-## Force (grams) vs. Outlet Area
-
-| Outlet Area | WS9290 | WS7040 |
-|------------|--------|--------|
-| 80         | 115    | 52     |
-| 100        | 118    | 54     |
-| 120        | 116    | 50     |
-| 135        | 116    | 47     |
-| 150        | 112    | 46     |
-| 165        | 107    | 43     |
-| 180        | 100    | 41     |
-| 210        | 94     | 37     |
+## 5min 20sec PLA Benchy
 
 ---
 
