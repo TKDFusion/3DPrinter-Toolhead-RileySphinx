@@ -5,11 +5,9 @@
 Sphinx toolhead is aimed to be a high-performance toolhead with an emphasis on part cooling and rigidity.  
 This project was built around the goal of printing a **quality 4-minute PLA Benchy**.  
 
-This toolhead has different configurations for Monolith gantry and Voron gantry.
+Sphinx is a **work in progress!** If you have any suggested feel free to reach out of discord!
 
-This project is a **work in progress!** If you have any suggested feel free to reach out of discord!
-
-If you use this toolhead and modify or remix, please upload here or reach out and let me know on Instagram or Discord!  
+If you use this toolhead and modify or remix, please upload here or let me know on Instagram or Discord!  
 📸 Instagram: [@practically_printed](https://instagram.com/practically_printed)  
 💬 Sphinx Development Channel: https://discord.gg/PdSYQn8kq
 
@@ -20,7 +18,6 @@ If you use this toolhead and modify or remix, please upload here or reach out an
 The current and most up to date version of Sphinx is called Sphinx tLW. This version utilizes a micro bowden approach in order to optimize for COM while not compromising on toolhead rigidity and so far has proved to work very well. 
 
 - **Print Settings:** 8 walls, 8 top/bottom layers, 40% infill
-
 
 
 ---
