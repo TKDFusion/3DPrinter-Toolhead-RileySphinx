@@ -37,7 +37,7 @@ The current and most up to date version of Sphinx is called Sphinx tLW. This ver
 
 | X IS Graph | Y IS Graph |
 |:-----------:|:----------:|
-| <img src="Images/IMG_4379.jpeg" width="300"> | <img src="Images/IMG_2722.png" width="300"> |
+| <img src="Images/IMG_4379.jpeg" width="300"> | <img src="Images/IMG_4380.jpeg" width="300"> |
 
 ---
 
