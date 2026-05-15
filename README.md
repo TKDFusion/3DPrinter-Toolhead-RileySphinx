@@ -3,15 +3,13 @@
 **File repository for the Sphinx toolhead**
 
 Sphinx toolhead is aimed to be a high-performance toolhead with an emphasis on part cooling and rigidity.  
-This project was built around the goal of printing a **quality 4-minute Benchy**.  
+This project was built around the goal of printing a **quality 4-minute PLA Benchy**.  
 
-This toolhead is designed to be used with Monolith Gantry. Normal voron gantry support will be added in the future.
+Sphinx is a **work in progress!** If you have any suggested feel free to reach out of discord!
 
-This project is a **work in progress!**
-
-If you use this toolhead and modify or remix, please upload here or reach out and let me know on Instagram or Discord!  
+If you use this toolhead and modify or remix, please upload here or let me know on Instagram or Discord!  
 📸 Instagram: [@practically_printed](https://instagram.com/practically_printed)  
-💬 Discord: `rileyrandall`
+💬 Sphinx Development Channel: https://discord.gg/PdSYQn8kq
 
 ---
 
@@ -42,16 +40,15 @@ The configurator allows you to select your Version, Hotend, Extruder, Blower, an
 
 ## 🧩 Notes
 
-Load the entire STEP file into Orca.  
-The STEP file has built-in supports, so:
+The current and most up to date version of Sphinx is called Sphinx tLW. This version utilizes a micro bowden approach in order to optimize for COM while not compromising on toolhead rigidity and so far has proved to work very well. 
 
-- **Main toolhead body:** 6 walls, 6 top/bottom layers, 25% infill    
-
+- **Print Settings:** 8 walls, 8 top/bottom layers, 40% infill
+- Print at least 4 of the Apex clips in either the Voron or Monolith folder
 
 
 ---
 
-## 📸 Pictures
+## 📸 Pictures (Outdated Pictures of Gen1 Sphinx)
 
 <img src="Images/IMG_2683.jpeg" alt="Sphinx Toolhead" width="300">
 
@@ -63,16 +60,17 @@ The STEP file has built-in supports, so:
 
 | X IS Graph | Y IS Graph |
 |:-----------:|:----------:|
-| <img src="Images/IMG_2721.png" width="300"> | <img src="Images/IMG_2722.png" width="300"> |
-
-*(These graphs were made with the printed toolhead bracket)*
+| <img src="Images/IMG_4379.jpeg" width="300"> | <img src="Images/IMG_4380.jpeg" width="300"> |
 
 ---
 
 ## ⚙️ Mass Specs / COM
 
-*(Add measurements or COM data here)*
+ <img src="Images/IMG_4381.jpeg" width="300">
 
+ Center of mass is left lower to account for un measured wires and CPAP hose mass
+
+ 
 ---
 
 ## 🧰 Currently Supported Hardware
@@ -81,7 +79,8 @@ The STEP file has built-in supports, so:
 - Tricorn
 - Goliath
 - CHC XL
-- Rapido UHF 
+- Rapido UHF
+- Dragon UHF
 
 **Extruders:**  
 - Sherpa Mini  
@@ -95,46 +94,21 @@ The STEP file has built-in supports, so:
 ## 🔧 Hardware in Progress
 
 **Hotends:**    
-- Chube Compact  
-- Dragon ACE UHF  
+- Chube Compact    
 
 **Extruders:**  
-- Orbiter 2.0 
-- Sherpa Micro  
-- Vz-Hextrudort Low Plus  
+- Orbiter 2.0 (maybe)   
   
 
 ---
 
 ## 🌬️ Cooling Capability
 
-The toolhead’s part cooling system is built specifically around the duct geometry to maximize usable airflow and thrust efficiency, with support for either WS9290 or WS7040 blowers. The 9290 duct option is very aggressive and great for speed printing, but the 7040 duct will not disappoint by any means. The goal of the ducts was to be able to print a perfect 5min benchy. Below is some data I collected that I used to optimize the toolhead ducts for both blowers.
+The toolhead is built specifically around the duct geometry to maximize usable airflow for part cooling, with support for either WS9290 or WS7040 blowers. The 9290 blower is the optimal option is very aggressive and great for speed printing, but the 7040 duct will not disappoint. The goal of the ducts was to be able to print a perfect 5min benchy. 
 
-## Mass Flow (g/s) vs. Outlet Area
+## 5min 20sec ABS Benchy
 
-| Outlet Area | WS9290 | WS7040 |
-|------------|--------|--------|
-| 80         | 3.0    | 1.7    |
-| 100        | 3.6    | 2.0    |
-| 120        | 4.5    | 2.7    |
-| 135        | 4.6    | 2.9    |
-| 150        | 5.2    | 2.8    |
-| 165        | 5.5    | 2.9    |
-| 180        | 5.6    | 3.0    |
-| 210        | 5.9    | 3.0    |
-
-## Force (grams) vs. Outlet Area
-
-| Outlet Area | WS9290 | WS7040 |
-|------------|--------|--------|
-| 80         | 115    | 52     |
-| 100        | 118    | 54     |
-| 120        | 116    | 50     |
-| 135        | 116    | 47     |
-| 150        | 112    | 46     |
-| 165        | 107    | 43     |
-| 180        | 100    | 41     |
-| 210        | 94     | 37     |
+<img src="Images/IMG_4382.jpeg" width="300">
 
 ---
 
@@ -147,5 +121,11 @@ COM for this toolhead was optimized using CNC Sherpa Mini and Tricorn, but will 
 Tested successfully with **Siraya Tech ABS-CF**, though any filled abs or better is recommended.
 
 ---
+
+## Acknowledgements
+
+Apex clips: https://github.com/ApexArray/ApexClips
+
+Huge shout out to everyone in the Excit3d discord for helping me test and develop this toolhead! Couldn't have done it without their help
 
 *© Sphinx Toolhead Project – Open-source and community-driven.*
