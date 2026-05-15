@@ -11,20 +11,6 @@ If you use this toolhead and modify or remix, please upload here or let me know 
 📸 Instagram: [@practically_printed](https://instagram.com/practically_printed)  
 💬 Sphinx Development Channel: https://discord.gg/PdSYQn8kq
 
----
-
-## 📁 Repository Structure
-
-The repository is organized into the following main directories:
-
-- **[CAD/](CAD/)**: Contains all STEP files for the toolhead, organized by version and hardware variant.
-  - **[V3-Beta/](CAD/V3-Beta/)**: The latest beta version (V3). Highly optimized for part cooling and performance.
-    - Includes variants for **Tricorn**, **Goliath**, **CHC XL**, and **Rapido UHF** hotends.
-    - Supports both **WS7040** and **WS9290** blowers.
-  - **[V2-Stable/](CAD/V2-Stable/)**: The current stable version.
-  - **[Accessories/](CAD/Accessories/)**: Universal parts like CPAP clamps and miscellaneous mounts.
-- **[Images/](Images/)**: Photos, diagrams, and time-lapse videos of the toolhead in action.
-- **[STLs/](STLs/)**: Placeholder for future STL exports.
 
 ---
 
@@ -34,7 +20,7 @@ We now provide an interactive 3D configurator to help you select the right parts
 
 - **[Launch Configurator (Beta)](Configurator/configurator.html)**
 
-The configurator allows you to select your Version, Hotend, Extruder, Blower, and Rail type to visualize the assembly and ensure you download the correct parts from the `CAD/` directory.
+The configurator allows you to select your belt path and Hotend visualize the assembly and ensure you download the correct parts from the 'Voron' and 'Monolith' directory.
 
 ---
 
