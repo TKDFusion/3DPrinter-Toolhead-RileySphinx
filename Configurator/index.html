@@ -116,6 +116,16 @@
     color: var(--text-muted);
     margin-bottom: 12px;
   }
+  .config-section h3.section-title-main {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    text-transform: none;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+  }
 
   .options-grid {
     display: flex;
@@ -197,12 +207,13 @@
     </div>
 
     <div class="config-section">
-      <h3>Series</h3>
+      <h3 class="section-title-main">Series</h3>
       <div class="options-grid" id="version-options">
-        <button class="option-btn active" data-val="v3">V3 Beta (Recommended)</button>
-        <button class="option-btn" data-val="v2">V2 Stable</button>
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:4px;">Stable</div>
+        <button class="option-btn active" data-val="monolith">Monolith</button>
         <button class="option-btn" data-val="voron">Voron</button>
-        <button class="option-btn" data-val="monolith">Monolith</button>
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-top:8px; margin-bottom:4px;">Old</div>
+        <button class="option-btn" data-val="v2">V2 Stable</button>
       </div>
     </div>
 
@@ -316,8 +327,8 @@ const CONFIG = {
 };
 
 let currentSelection = {
-  version: 'v3',
-  hotend: 'tricorn',
+  version: 'monolith',
+  hotend: 'dragon-uhf',
   ductMount: 'integrated',
   blower: '7040',
   extruder: 'sherpa-mini',
