@@ -197,10 +197,12 @@
     </div>
 
     <div class="config-section">
-      <h3>Version</h3>
+      <h3>Series</h3>
       <div class="options-grid" id="version-options">
         <button class="option-btn active" data-val="v3">V3 Beta (Recommended)</button>
-        <button class="option-btn" data-val="v2">V2 Stable (Broken configurator)</button>
+        <button class="option-btn" data-val="v2">V2 Stable</button>
+        <button class="option-btn" data-val="voron">Voron</button>
+        <button class="option-btn" data-val="monolith">Monolith</button>
       </div>
     </div>
 
@@ -288,6 +290,27 @@ const CONFIG = {
     ],
     blowers: [{ id: 'integrated', name: 'Integrated', parts: [] }],
     extruders: [{ id: 'integrated', name: 'Integrated', parts: [] }],
+    rails: [{ id: 'integrated', name: 'Integrated', parts: [] }]
+  },
+  voron: {
+    hotends: [
+      { id: 'goliath', name: 'Goliath CHC-XL', parts: ['Voron/Bodies/body_goliath-chcxl_sherpa_voron.glb', 'Voron/Common/mount_middle_bracket_voron.glb', 'Voron/Common/duct_rear_voron.glb', 'Voron/Common/support_top_sherpa_voron.glb'], hasDuctOption: false },
+      { id: 'rapido-uhf', name: 'Rapido UHF', parts: ['Voron/Bodies/body_rapido-uhf_sherpa_voron.glb', 'Voron/Common/mount_middle_bracket_voron.glb', 'Voron/Common/duct_rear_voron.glb', 'Voron/Common/support_top_sherpa_voron.glb'], hasDuctOption: false },
+      { id: 'tricorn', name: 'Tricorn', parts: ['Voron/Bodies/body_tricorn_sherpa_voron.glb', 'Voron/Common/mount_middle_bracket_voron.glb', 'Voron/Common/duct_rear_voron.glb', 'Voron/Common/support_top_sherpa_voron.glb'], hasDuctOption: false }
+    ],
+    blowers: [{ id: 'integrated', name: 'Integrated', parts: [] }],
+    extruders: [{ id: 'sherpa', name: 'Sherpa Mini', parts: [] }],
+    rails: [{ id: 'integrated', name: 'Integrated', parts: [] }]
+  },
+  monolith: {
+    hotends: [
+      { id: 'dragon-uhf', name: 'Dragon UHF', parts: ['Monolith/Bodies/body_dragon-uhf_sherpa_monolith.glb', 'Monolith/Common/mount_middle_bracket_monolith.glb', 'Monolith/Common/duct_rear_monolith.glb', 'Monolith/Common/support_top_sherpa_monolith.glb'], hasDuctOption: false },
+      { id: 'goliath', name: 'Goliath CHC-XL', parts: ['Monolith/Bodies/body_goliath-chcxl_sherpa_monolith.glb', 'Monolith/Common/mount_middle_bracket_monolith.glb', 'Monolith/Common/duct_rear_monolith.glb', 'Monolith/Common/support_top_sherpa_monolith.glb'], hasDuctOption: false },
+      { id: 'rapido-uhf', name: 'Rapido UHF', parts: ['Monolith/Bodies/body_rapido-uhf_sherpa_monolith.glb', 'Monolith/Common/mount_middle_bracket_monolith.glb', 'Monolith/Common/duct_rear_monolith.glb', 'Monolith/Common/support_top_sherpa_monolith.glb'], hasDuctOption: false },
+      { id: 'tricorn', name: 'Tricorn', parts: ['Monolith/Bodies/body_tricorn_sherpa_monolith.glb', 'Monolith/Common/mount_middle_bracket_monolith.glb', 'Monolith/Common/duct_rear_monolith.glb', 'Monolith/Common/support_top_sherpa_monolith.glb'], hasDuctOption: false }
+    ],
+    blowers: [{ id: 'integrated', name: 'Integrated', parts: [] }],
+    extruders: [{ id: 'sherpa', name: 'Sherpa Mini', parts: [] }],
     rails: [{ id: 'integrated', name: 'Integrated', parts: [] }]
   }
 };
@@ -526,41 +549,42 @@ document.getElementById('download-all-btn').onclick = async () => {
   setStatus('Download complete');
 };
 
-const checkFileExists = async (path) => { try { const response = await fetch(path, { method: 'HEAD' }); return response.ok; } catch { return false; } }; function renderOptions() {
+const checkFileExists = async (path) => { try { const response = await fetch(path, { method: 'HEAD' }); return response.ok; } catch { return false; } };
+
+function renderOptions() {
   const verData = CONFIG[currentSelection.version];
-  const renderGroup = async (id, data, currentKey) => {
-    const container = document.getElementById(id);
+  const renderGroup = async (containerId, sectionId, data, currentKey) => {
+    const container = document.getElementById(containerId);
     container.innerHTML = '';
     const validOptions = await Promise.all(
-  data.map(async (opt) => {
-    if (!opt.parts || opt.parts.length === 0) return null;
-    const allFilesExist = await Promise.all(
-      opt.parts.map((part) =>
-        checkFileExists(`Parts/${part.replace('{blower}', currentSelection.blower)}`)
-      )
+      data.map(async (opt) => {
+        if (!opt.parts || opt.parts.length === 0) return null;
+        const allFilesExist = await Promise.all(
+          opt.parts.map((part) =>
+            checkFileExists(`Parts/${part.replace('{blower}', currentSelection.blower)}`)
+          )
+        );
+        return allFilesExist.every(Boolean) ? opt : null;
+      })
     );
-    return allFilesExist.every(Boolean) ? opt : null;
-  })
-);
-
-validOptions.filter(Boolean).forEach((opt) => {
+    const filtered = validOptions.filter(Boolean);
+    filtered.forEach((opt) => {
       const btn = document.createElement('button');
       btn.className = 'option-btn' + (opt.id === currentSelection[currentKey] ? ' active' : '');
       btn.textContent = opt.name;
-      btn.onclick = () => { currentSelection[currentKey] = opt.id; renderOptions();
-    updateModel(); };
+      btn.onclick = () => { currentSelection[currentKey] = opt.id; renderOptions(); updateModel(); };
       container.appendChild(btn);
     });
+    if (sectionId) document.getElementById(sectionId).style.display = filtered.length > 0 ? '' : 'none';
   };
-  renderGroup('hotend-options', verData.hotends, 'hotend');
-  renderGroup('blower-options', verData.blowers, 'blower');
-  renderGroup('extruder-options', verData.extruders, 'extruder');
-  renderGroup('rail-options', verData.rails, 'rail');
-  
-  
+  renderGroup('hotend-options', 'hotend-section', verData.hotends, 'hotend');
+  renderGroup('blower-options', 'blower-section', verData.blowers, 'blower');
+  renderGroup('extruder-options', 'extruder-section', verData.extruders, 'extruder');
+  renderGroup('rail-options', 'rail-section', verData.rails, 'rail');
+
   const selectedHotend = verData.hotends.find(h => h.id === currentSelection.hotend);
   const ductSect = document.getElementById('duct-mount-section');
-  ductSect.style.display = (currentSelection.version === 'v3' && selectedHotend.id === 'tricorn') ? 'block' : 'none';
+  ductSect.style.display = (currentSelection.version === 'v3' && selectedHotend && selectedHotend.id === 'tricorn') ? 'block' : 'none';
 }
 
 document.querySelectorAll('#version-options .option-btn').forEach(btn => {
