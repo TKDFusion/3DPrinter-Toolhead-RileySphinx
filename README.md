@@ -18,6 +18,7 @@ If you use this toolhead and modify or remix, please upload here or let me know 
 The current and most up to date version of Sphinx is called Sphinx tLW. This version utilizes a micro bowden approach in order to optimize for COM while not compromising on toolhead rigidity and so far has proved to work very well. 
 
 - **Print Settings:** 8 walls, 8 top/bottom layers, 40% infill
+- Print at least 4 of the Apex clips in either the Voron or Monolith folder
 
 
 ---
@@ -95,5 +96,11 @@ COM for this toolhead was optimized using CNC Sherpa Mini and Tricorn, but will 
 Tested successfully with **Siraya Tech ABS-CF**, though any filled abs or better is recommended.
 
 ---
+
+## Acknowledgements
+
+Apex clips: https://github.com/ApexArray/ApexClips
+
+Huge shout out to everyone in the Excit3d discord for helping me test and develop this toolhead! Couldn't have done it without their help
 
 *© Sphinx Toolhead Project – Open-source and community-driven.*
